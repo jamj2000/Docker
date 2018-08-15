@@ -108,7 +108,7 @@ docker  exec  -it  f44ad5467274  bash
 > NOTA: `f44ad5467274` es el identificador del contenedor, que pueder verse con `docker ps`. 
 
 
-**Ejemplo de parada, reinicio o inicio de un contenedor**
+**Ejemplo de parada, reinicio e inicio de un contenedor**
 
 ```bash
 docker  stop     f44ad5467274 
@@ -144,8 +144,8 @@ docker  start    f44ad5467274
   ```
 
 > NOTAS: 
->  `WORKDIR` es el directorio interior de la imagen donde se guardarán los archivos de la app
->  `COPY . .` copia todos los archivos del directorio local actual al directorio WORKDIR
+> - `WORKDIR` es el directorio interior de la imagen donde se guardarán los archivos de la app
+> - `COPY . .` copia todos los archivos del directorio local actual al directorio WORKDIR
 
 para construir hacemos:
 
