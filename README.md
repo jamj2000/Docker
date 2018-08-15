@@ -123,13 +123,13 @@ docker  start    f44ad5467274
 
 - .dockerignore
 
-```
-.git
-*Dockerfile*
-*docker-compose*
-node_modules
-snapshots
-```
+  ```
+  .git
+  *Dockerfile*
+  *docker-compose*
+  node_modules
+  snapshots
+  ```
 
 - Dockerfile
 
