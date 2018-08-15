@@ -43,9 +43,7 @@ docker  help  container
 ```
 
 
-**Ejemplos de comandos más usados**
-
-- Ver imágenes en equipo local
+**Lisar imágenes en equipo local**
 
 ```bash
 docker  images
@@ -54,7 +52,7 @@ docker  image  ls
 docker  image  ls  -a 
 ```
 
-- Ver contenedores en equipo local
+**Listar contenedores en equipo local**
 
 ```bash
 docker  ps   
@@ -63,7 +61,7 @@ docker  container  ls
 docker  images     ls -a
 ```
 
-- Eliminar imagenes
+**Eliminar imagenes**
 
 ```bash
 docker  rmi  <imagen>
@@ -74,7 +72,7 @@ docker  image  rm  <imagen>  -f
 
 > NOTA: La opción `-f` fuerza el borrado. Se utiliza en el caso de que algún contenedor esté ejecutándose con dicha imagen.
 
-- Eliminar contenedores
+**Eliminar contenedores**
 
 ```bash
 docker  rm  <id_contenedor>
@@ -84,9 +82,9 @@ docker  rm  <id_contenedor>  -f
 > NOTA: La opción `-f` fuerza el borrado. Detiene el contenedor antes de elimarlo.
 
 
-- Ejecutar una imagen (Puede ser local o remota)
+**Ejecutar una imagen**
 
-Si la imagen es remota, ésta se descarga previamente (git pull implícito)
+La imagen puede estar disponible en el equipo local o no. Si la imagen es remota, ésta se descarga previamente (git pull implícito)
 
 ```bash
 docker  run  <imagen>
@@ -94,14 +92,14 @@ docker  run  -it  imagen
 docker  run  -d   imagen
 ```
 
-**Ejecución de Apache**
+**Ejemplo de ejecución de imagen de Apache**
 
 ```bash
 docker run -d -p 80:80  httpd 
 docker run -d -p 80:80  -v /var/www/html:/usr/local/apache2/htdocs  httpd 
 ```
 
-**Ejecutar un comando en un contenedor en ejecución**
+**Ejemplo de ejecución de comando interno de un contenedor en ejecución**
 
 ```bash
 docker  exec  -it  f44ad5467274  bash
@@ -110,7 +108,7 @@ docker  exec  -it  f44ad5467274  bash
 > NOTA: `f44ad5467274` es el identificador del contenedor, que pueder verse con `docker ps`. 
 
 
-**Parada, inicio y eliminación del contenedor**
+**Ejemplo de parada, inicio y eliminación de un contenedor**
 ```bash
 docker  stop   f44ad5467274 
 docker  start  f44ad5467274 
@@ -151,13 +149,13 @@ snapshots
 para construir hacemos:
 
 ```bash
-docker build  -t jamj2000/tienda0_app  .
+docker  build  -t jamj2000/tienda0_app  .
 ```
 
 **Subida a DockerHub**
 
 ```bash
-docker push  jamj2000/tienda0_app
+docker  push  jamj2000/tienda0_app
 ```
 
 **Usando docker-compose**
@@ -211,7 +209,7 @@ Cerramos sesión del usuario y volvemos a iniciarla.
 
 ### En el servidor
 
-__Pasos para crear un registro local e incorporar imágenes__
+**Pasos para crear un registro local e incorporar imágenes**
 
 
 #### Creamos directorio para el registro
@@ -252,7 +250,8 @@ docker rm -v registry
 
 
 ### En el cliente
-__Pasos para descargar imágenes__
+
+**Pasos para descargar imágenes**
 
 
 En los equipos cliente debemos tener instalado también el paquete `docker.io`, así como configurar el demonio para que permita la conexión a sitios "inseguros" (sin HTTPS).
