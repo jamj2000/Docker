@@ -82,6 +82,13 @@ docker  rm  <id_contenedor>  -f
 > NOTA: La opción `-f` fuerza el borrado. Detiene el contenedor antes de elimarlo.
 
 
+**Eliminar todos los contenedores**
+
+```bash
+docker rm $(docker ps -a -q) -f
+```
+
+
 **Ejecutar una imagen**
 
 La imagen puede estar disponible en el equipo local o no. Si la imagen es remota, ésta se descarga previamente (git pull implícito)
