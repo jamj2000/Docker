@@ -63,6 +63,27 @@ docker  container  ls
 docker  images     ls -a
 ```
 
+- Eliminar imagenes
+
+```bash
+docker  rmi  <imagen>
+docker  rmi  <imagen>  -f 
+docker  image  rm  <imagen>  
+docker  image  rm  <imagen>  -f  
+```
+
+> NOTA: La opción `-f` fuerza el borrado. Se utiliza en el caso de que algún contenedor esté ejecutándose con dicha imagen.
+
+- Eliminar contenedores
+
+```bash
+docker  rm  <id_contenedor>
+docker  rm  <id_contenedor>  -f 
+```
+
+> NOTA: La opción `-f` fuerza el borrado. Detiene el contenedor antes de elimarlo.
+
+
 - Ejecutar una imagen (Puede ser local o remota)
 
 Si la imagen es remota, ésta se descarga previamente (git pull implícito)
@@ -94,12 +115,22 @@ docker  exec  -it  f44ad5467274  bash
 docker  stop   f44ad5467274 
 docker  start  f44ad5467274 
 docker  rm     f44ad5467274 -f
+```
 
 > NOTA: `f44ad5467274` es el identificador del contenedor, que pueder verse con `docker ps`. 
   
 
+**Construcción de nueva imagen**
 
-**Construcción de nueva imagen*
+- .dockerignore
+
+```
+.git
+*Dockerfile*
+*docker-compose*
+node_modules
+snapshots
+```
 
 - Dockerfile
 
@@ -117,13 +148,46 @@ docker  rm     f44ad5467274 -f
 >  `WORKDIR` es el directorio interior de la imagen donde se guardarán los archivos de la app
 >  `COPY . .` copia todos los archivos del directorio local actual al directorio WORKDIR
 
-**Etiquetado y subida a DockerHub**
+para construir hacemos:
 
 ```bash
-docker tag  tienda0_app     jamj2000/tienda0_app
+docker build  -t jamj2000/tienda0_app  .
+```
+
+**Subida a DockerHub**
+
+```bash
 docker push  jamj2000/tienda0_app
 ```
 
+**Usando docker-compose**
+
+- docker-compose.yml
+
+```yaml
+version: '2'
+
+services:
+  app:
+    container_name: app
+    restart: always
+    build: .
+    ports: 
+      - '80:3000'
+    links:
+      - mongo
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - '27017:27017'
+```
+
+Ejecutamos
+
+```bash
+docker-compose  up  -d
+```
 
 
 ## CREAR UN REGISTRO PRIVADO
