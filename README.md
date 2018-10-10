@@ -10,7 +10,7 @@
 **Instalamos Docker y añadimos usuario al grupo docker**
 
 ```bash
-sudo  apt  install  docker.io
+sudo  apt  install  docker.io  docker-compose
 sudo  adduser  `id -un`  docker
 ```
 
@@ -32,6 +32,7 @@ Si tenemos cuenta en el DockerHub.
 docker  login 
 docker  pull     (en este caso no es necesario estar registrado)
 docker  push
+docker  logout
 ```
 
 **Ayuda**
@@ -43,7 +44,7 @@ docker  help  container
 ```
 
 
-**Lisar imágenes en equipo local**
+**Listar imágenes en equipo local**
 
 ```bash
 docker  images
