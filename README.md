@@ -35,6 +35,17 @@ docker  push
 docker  logout
 ```
 
+
+> NOTA: En Ubuntu 18.04 parece haber un bug en alguna parte que impide realizar `docker login`.
+>
+> Como `workaround` temporal podemos ejecutar los siguientes comandos:
+> ```bash
+> rm  ~/.docker/config.json
+> sudo  mv  /usr/bin/docker-credential-secretservice  /usr/bin/docker-credential-secretservice.orig
+> ```
+> 
+> Mas información: https://stackoverflow.com/questions/50151833/cannot-login-to-docker-account
+
 **Ayuda**
 
 ```bash
