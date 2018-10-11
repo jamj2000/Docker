@@ -220,7 +220,7 @@ Un registro es un servidor donde se almacenan imágenes de docker. Un registro p
 Este paso debe realizarse tanto en el servidor que actuará como registro como en los clientes. 
 
 ```bash
-sudo  apt  install  docker.io
+sudo  apt  install  docker.io  docker-compose
 sudo  adduser  `id -un`  docker
 ```
 
