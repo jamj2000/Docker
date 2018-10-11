@@ -103,7 +103,7 @@ docker rm $(docker ps -a -q) -f
 
 **Ejecutar una imagen**
 
-La imagen puede estar disponible en el equipo local o no. Si la imagen es remota, ésta se descarga previamente (git pull implícito)
+La imagen puede estar disponible en el equipo local o no. Si la imagen es remota, ésta se descarga previamente (`docker pull` implícito)
 
 ```bash
 docker  run  <imagen>
