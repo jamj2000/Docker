@@ -30,8 +30,8 @@ Si tenemos cuenta en el DockerHub.
 
 ```bash
 docker  login 
-docker  pull     (en este caso no es necesario estar registrado)
-docker  push
+docker  pull  <imagen>    (en este caso no es necesario estar registrado)
+docker  push  <imagen>
 docker  logout
 ```
 
