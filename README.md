@@ -140,7 +140,7 @@ docker  start    f44ad5467274
 
 **Construcción de nueva imagen**
 
-Como ejemplo, vamos a crear una nueva imagen para la aplicación cuyo código es `https://github.com/jamj2000/tienda0.git`.
+Como ejemplo, vamos a crear una nueva imagen para la aplicación cuyo código es `[ttps://github.com/jamj2000/tienda0.git]https://github.com/jamj2000/tienda0.git)`.
 Hacemos 
 
 ```bash
@@ -191,6 +191,10 @@ docker  push  jamj2000/tienda0_app
 ```
 
 **Usando docker-compose**
+
+Usamos `docker-compose` cuando deseamos desplegar varios servicios de una vez: típicamente aplicación + base de datos.
+
+En el siguiente ejemplo, desplegamos el servicio `app` que contiene la aplicación y el servicio `mongo` que contiene la base de datos.
 
 - docker-compose.yml
 
