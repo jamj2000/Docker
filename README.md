@@ -156,7 +156,7 @@ docker  start    f44ad5467274
 
 **Construcción de nueva imagen**
 
-Como ejemplo, vamos a crear una nueva imagen para la aplicación cuyo código es `[ttps://github.com/jamj2000/tienda0.git]https://github.com/jamj2000/tienda0.git)`.
+Como ejemplo, vamos a crear una nueva imagen para la aplicación cuyo código es `[https://github.com/jamj2000/tienda0.git](https://github.com/jamj2000/tienda0.git)`.
 Hacemos 
 
 ```bash
