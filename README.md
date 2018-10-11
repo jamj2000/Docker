@@ -253,7 +253,7 @@ Cerramos sesión del usuario y volvemos a iniciarla.
 mkdir  ~/registro
 ```
 
-#### Descargamos contenedor de registro (registry:2)
+#### Descargamos imagen (registry:2) y ponemos en funcionamiento un contenedor de registro 
 
 ```
 docker run -d -p 5000:5000 \
@@ -262,6 +262,9 @@ docker run -d -p 5000:5000 \
               --name registry \
               registry:2
 ```
+
+**NOTA**: Observa la ironía. El servicio de registro es proporcionado por un contenedor, no por un servidor del sistema.
+
 
 #### Incorporamos la imagen hello-world a nuestro registro con el nombre hola
 
