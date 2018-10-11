@@ -2,6 +2,22 @@
 **Apuntes sobre contenedores Docker**
 
 
+## INTRODUCCIÓN
+
+Actualmente existen 2 formas principales de virtualización:
+- Máquinas virtuales
+- Contenedores
+
+Tienen algunos aspectos en común:
+- Ambos métodos utilizan imágenes como "plantilla".
+- Usando una imagen pueden generarse muchos sistemas virtualizados, llamados máquinas virtuales y contenedores respectivamente.
+- Las imágenes son de sólo lectura, el sistema virtualizado no.
+
+Y una diferencia principal:
+- Un contenedor no tiene kernel del sistema operativo, sino que utiliza el del anfitrión. Por ello no realiza toda la comprobación de hardware e inicialización del sistema operativo que realiza una máquina virtual, lo cual permite que el inicio de cualquier servicio en un contenedor sea mucho más rápido que el mismo servicio sobre una máquina virtual.
+
+Actualmente el estándar de facto en contenedores es `docker`, aunque existen otros sistemas como `LXC`, `LXD`, etc.
+
 ## USO DE DOCKER
 
 
@@ -254,6 +270,9 @@ mkdir  ~/registro
 ```
 
 #### Descargamos imagen (registry:2) y ponemos en funcionamiento un contenedor de registro 
+
+LLamaremos `registry` al contenedor, aunque su nombre no tiene mucha importancia.
+
 
 ```
 docker run -d -p 5000:5000 \
