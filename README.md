@@ -140,6 +140,16 @@ docker  start    f44ad5467274
 
 **Construcción de nueva imagen**
 
+Como ejemplo, vamos a crear una nueva imagen para la aplicación cuyo código es `https://github.com/jamj2000/tienda0.git`.
+Hacemos 
+
+```bash
+git  clone  https://github.com/jamj2000/tienda0.git
+cd tienda0
+```
+
+Y revisamos los 2 archivos siguientes:
+
 - .dockerignore
 
   ```
@@ -169,8 +179,10 @@ docker  start    f44ad5467274
 para construir hacemos:
 
 ```bash
-docker  build  -t jamj2000/tienda0_app  .
+docker  build  -t jamj2000/tienda0_app  .   
 ```
+
+**NOTA**: El punto final es importante. Indica el directorio donde se halla el archivo Dockerfile.
 
 **Subida a DockerHub**
 
