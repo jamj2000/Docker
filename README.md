@@ -281,13 +281,13 @@ docker run --rm \
 
 Y obtendremos una copia de seguiridad del volumen en el archivo `fpresultados_datos.tar.gz`.
 
-Si por cualquier motivo perdemos la información del volumen, podremos volver a restaurar el volumen desde la copia de seguiridad anterior. Imaginemos que eliminamos el volumen con:
+Si por cualquier motivo perdemos la información del volumen, podremos volver a restaurar el volumen desde la copia de seguridad anterior. Imaginemos que eliminamos el volumen con:
 
 ```bash
 docker  volume  rm  fpresultados_datos
 ```
 
-Podemos restaurar la aplicación y los datos contenidos en la copia de seguridad de la manera que se indica a continuación:
+Podemos restaurar los datos contenidos en la copia de seguridad e iniciar de nuevo la aplicación de la manera que se indica a continuación:
 
 Para restaurar la copia de seguridad anterior de dicho volumen ejecutamos el siguiente comando:
 
