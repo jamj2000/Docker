@@ -256,10 +256,8 @@ Si accedemos a la aplicación mediante http://localhost:8888/login, e iniciamos 
 
 Si después eliminados la aplicación con:
 
-
 ```bash
-docker-compose  stop
-docker-compose  rm -f
+docker-compose  down
 ```
 
 el volumen de datos `fpresultados_datos` seguirá existiendo. Podemos verlo con el comando:
@@ -279,7 +277,7 @@ docker run --rm \
   busybox tar -czC /source . > fpresultados_datos.tar.gz
 ```
 
-Y obtendremos una copia de seguiridad del volumen en el archivo `fpresultados_datos.tar.gz`.
+Y obtendremos una copia de seguridad del volumen en el archivo `fpresultados_datos.tar.gz`.
 
 Si por cualquier motivo perdemos la información del volumen, podremos volver a restaurar el volumen desde la copia de seguridad anterior. Imaginemos que eliminamos el volumen con:
 
