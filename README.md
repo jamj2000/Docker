@@ -154,6 +154,20 @@ docker  start    f44ad5467274
 > NOTA: `f44ad5467274` es el identificador del contenedor, que pueder verse con `docker ps`. 
   
 
+**Iniciar aplicación con docker-compose**
+
+```bash
+docker-compose  up  -d    
+``` 
+
+**Eliminar aplicación con docker-compose**
+
+```bash
+docker-compose  down
+```
+
+
+
 ## CONSTRUCCIÓN DE NUEVA IMAGEN
 
 Como ejemplo, vamos a crear una nueva imagen para la aplicación cuyo código es [`https://github.com/jamj2000/tienda0.git`](https://github.com/jamj2000/tienda0.git).
@@ -208,7 +222,7 @@ docker  push  jamj2000/tienda0_app
 
 **Usando docker-compose**
 
-Usamos `docker-compose` cuando deseamos desplegar varios servicios de una vez: típicamente aplicación + base de datos.
+Usamos `docker-compose` cuando deseamos desplegar varios servicios de una vez: típicamente **aplicación + base de datos**.
 
 En el siguiente ejemplo, desplegamos el servicio `app` que contiene la aplicación y el servicio `mongo` que contiene la base de datos.
 
@@ -233,7 +247,7 @@ services:
       - '27017:27017'
 ```
 
-Ejecutamos
+Para iniciar la aplicación, ejecutamos
 
 ```bash
 docker-compose  up  -d
@@ -254,7 +268,7 @@ docker  exec  fpresultados_bd_1  /data/database.sh
 
 Si accedemos a la aplicación mediante http://localhost:8888/login, e iniciamos sesión con rol de administrador, podremos añadir, modificar o borrar datos de MySQL.
 
-Si después eliminados la aplicación con:
+Si después eliminamos la aplicación con:
 
 ```bash
 docker-compose  down
