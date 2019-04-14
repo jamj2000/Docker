@@ -154,7 +154,7 @@ docker  start    f44ad5467274
 > NOTA: `f44ad5467274` es el identificador del contenedor, que pueder verse con `docker ps`. 
   
 
-**Construcción de nueva imagen**
+## CONSTRUCCIÓN DE NUEVA IMAGEN
 
 Como ejemplo, vamos a crear una nueva imagen para la aplicación cuyo código es [`https://github.com/jamj2000/tienda0.git`](https://github.com/jamj2000/tienda0.git).
 Hacemos 
@@ -238,6 +238,74 @@ Ejecutamos
 ```bash
 docker-compose  up  -d
 ```
+
+## TRABAJAR CON VOLÚMENES DE DATOS
+
+Algunas aplicaciones hacen uso de volúmenes para proporcionar persistencia de datos entre distintas ejecuciones. Típicamente son usados por bases de datos como puede ser MySQL.
+
+Por ejemplo para la aplicación [FP-RESULTADOS](https://github.com/jamj2000/fp-resultados), ejecutamos las siguientes sentencias para lanzar la aplicación con los datos:
+
+```bash
+git  clone  https://github.com/jamj2000/fp-resultados.git
+cd fp-resultados.git
+docker-compose  up  -d
+docker  exec  fpresultados_bd_1  /data/database.sh
+```
+
+Si accedemos a la aplicación mediante http://localhost:8888/login, e iniciamos sesión con rol de administrador, podremos añadir, modificar o borrar datos de MySQL.
+
+Si después eliminados la aplicación con:
+
+
+```bash
+docker-compose  stop
+docker-compose  rm -f
+```
+
+el volumen de datos `fpresultados_datos` seguirá existiendo. Podemos verlo con el comando:
+
+```bash
+docker  volume  ls
+```
+
+Para hacer una copia de seguridad de dicho volumen ejecutamos el siguiente comando:
+
+**Exportar volumen fpresultados_datos** 
+
+
+```bash
+docker run --rm \
+  -v fpresultados_datos:/source:ro \
+  busybox tar -czC /source . > fpresultados_datos.tar.gz
+```
+
+Y obtendremos una copia de seguiridad del volumen en el archivo `fpresultados_datos.tar.gz`.
+
+Si por cualquier motivo perdemos la información del volumen, podremos volver a restaurar el volumen desde la copia de seguiridad anterior. Imaginemos que eliminamos el volumen con:
+
+```bash
+docker  volume  rm  fpresultados_datos
+```
+
+Podemos restaurar la aplicación y los datos contenidos en la copia de seguridad de la manera que se indica a continuación:
+
+Para restaurar la copia de seguridad anterior de dicho volumen ejecutamos el siguiente comando:
+
+**Importar volumne fpresultados_datos**
+
+```bash
+docker run --rm -i \
+  -v fpresultados_datos:/target \
+  busybox tar -xzC /target < fpresultados_datos.tar.gz
+```
+
+Para volver a iniciar la aplicación:
+
+```bash
+docker-compose  up  -d
+```
+
+
 
 
 ## CREAR UN REGISTRO PRIVADO
