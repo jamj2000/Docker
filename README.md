@@ -86,7 +86,7 @@ docker  image  ls  -a
 docker  ps   
 docker  ps -a
 docker  container  ls 
-docker  images     ls -a
+docker  container  ls -a
 ```
 
 **Eliminar imagenes**
