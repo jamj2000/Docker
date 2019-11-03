@@ -166,6 +166,20 @@ docker-compose  up  -d
 docker-compose  down
 ```
 
+## EJEMPLOS 
+
+```bash
+docker  network  create  red
+
+docker  run  -d  -p 8081:8080  -v /var/lib/tomcat8/webapps:/usr/local/tomcat/webapps  -v /var/lib/tomcat8/lib/mysql-connector-java-5.1.21.jar:/usr/local/tomcat/lib/mysql-connector-java-5.1.21.jar   --network red  tomcat:8
+docker  run  -d  -p 3307:3306  -e MYSQL_ALLOW_EMPTY_PASSWORD=yes  -e MYSQL_ROOT_HOST=%  -e MYSQL_DATABASE=planticas  --network red  --name mysql  mysql:8
+```
+
+Para conectar al servidor MySQL anterior, hacemos:
+
+```bash
+mysql  -u root -h 127.0.0.1  -P 3307
+```
 
 
 ## CONSTRUCCIÓN DE NUEVA IMAGEN
