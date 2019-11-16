@@ -179,6 +179,13 @@ docker  run  -d  -p 9000:9000  --name sonarqube  sonarqube:lts
 
 ## EJEMPLOS MÁS COMPLEJOS
 
+
+
+```bash
+# Eclipse CHE - Puerto 8080
+docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/data  eclipse/che:6.19.0   start
+```
+
 ```bash
 docker  network  create  red
 
