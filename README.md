@@ -166,7 +166,18 @@ docker-compose  up  -d
 docker-compose  down
 ```
 
-## EJEMPLOS 
+## EJEMPLOS SENCILLOS
+
+```bash
+# Tomcat 8
+docker  run  -d  -p 8080:8080  --name tomcat8    tomcat:8.0-jre8
+
+# Sonarqube 7.9 LTS 
+docker  run  -d  -p 9000:9000  --name sonarqube  sonarqube:lts
+```
+
+
+## EJEMPLOS MÁS COMPLEJOS
 
 ```bash
 docker  network  create  red
