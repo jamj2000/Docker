@@ -30,7 +30,12 @@ sudo  apt  install  docker.io  docker-compose
 sudo  adduser  `id -un`  docker
 ```
 
-Cerramos sesión del usuario y volvemos a iniciarla.
+El último comando añade el usuario actual al grupo docker. 
+Esto es necesario para que dicho usuario pueda trabajar con contenedores de docker. 
+
+
+
+Para que los cambios tengan efecto,  cerramos sesión del usuario y volvemos a iniciarla. Una solución también válida,aunque más drástica, es reiniciar el ordenador. 
 
 > NOTA: Las imágenes se guardarán en `/var/lib/docker`.
 
