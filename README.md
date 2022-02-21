@@ -16,6 +16,9 @@ Tienen algunos aspectos en común:
 Y una diferencia principal:
 - Un contenedor no tiene kernel del sistema operativo, sino que utiliza el del anfitrión. Por ello no realiza toda la comprobación de hardware e inicialización del sistema operativo que realiza una máquina virtual, lo cual permite que el inicio de cualquier servicio en un contenedor sea mucho más rápido que el mismo servicio sobre una máquina virtual.
 
+![VM vs Container](Container-vs-VMs.jpg)
+
+
 Actualmente el estándar de facto en contenedores es `docker`, aunque existen otros sistemas como `LXC`, `LXD`, etc.
 
 ## USO DE DOCKER
