@@ -110,7 +110,7 @@ docker  rm  <id_contenedor>
 docker  rm  <id_contenedor>  -f 
 ```
 
-> NOTA: La opción `-f` fuerza el borrado. Detiene el contenedor antes de elimarlo.
+> NOTA: La opción `-f` fuerza el borrado. Detiene el contenedor antes de eliminarlo.
 
 
 **Eliminar todos los contenedores**
