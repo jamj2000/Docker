@@ -1,0 +1,34 @@
+version: '3'
+
+services: 
+  oracle-db:
+#    image: container-registry.oracle.com/database/express:21.3.0-xe
+    image: oracleinanutshell/oracle-xe-11g
+    container_name: oracle-xe
+    ports:
+      - 1521:1521
+      - 5500:5500
+      - 8080:8080
+    volumes:
+      - oracledata:/u01/app/oracle/product/11.2.0/xe
+    environment:
+      - ORACLE_ALLOW_REMOTE=true
+      - ORACLE_DISABLE_ASYNCH_IO=true
+      - ORACLE_ENABLE_XDB=true
+
+
+volumes:
+  oracledata:
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  db:
+    image: "mcr.microsoft.com/mssql/server:2019-latest"
+    ports:
+      - 1433:1433
+      - 1434:1434/udp
+    environment:
+      SA_PASSWORD: "Passw0rd"
+      ACCEPT_EULA: "Y"
+    volumes:
+      - data:/var/opt/mssql
+
+volumes:
+  data:
+
+# Ejemplos de uso:
+#
+# docker exec -it sqlserver_db /opt/mssql-tools/bin/sqlcmd -U SA -P Passw0rd
+# docker exec -it sqlserver_db /opt/mssql-tools/bin/sqlcmd -U SA -P Passw0rd -i InsertarDatos.sql
+

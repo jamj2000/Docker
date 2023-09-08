@@ -1,0 +1,19 @@
+https://hub.docker.com/r/oracleinanutshell/oracle-xe-11g
+
+# Login http://localhost:8080/apex/apex_admin with following credential:
+username: ADMIN
+password: admin
+
+# Tras el primer inicio en APEX pide cambiar la contraseña. Se establece
+username: ADMIN
+password: Informatica-1
+
+# Connect
+hostname: localhost
+port: 49161
+sid: xe
+username: system
+password: oracle
+
+# Password for SYS & SYSTEM
+oracle
