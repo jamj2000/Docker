@@ -4,6 +4,7 @@ services:
   db:
     image: mariadb:10.3
     restart: always
+    container_name: mariadb
     environment:
 #      MYSQL_ROOT_PASSWORD: root
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
@@ -16,6 +17,7 @@ services:
   phpmyadmin:
     image: phpmyadmin
     restart: always
+    container_name: phpmyadmin
     ports:
       - 8081:80
     environment:
