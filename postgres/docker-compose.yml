@@ -4,6 +4,8 @@ services:
   db:
     image: postgres
     restart: always
+    container_name: postgres-server 
+    hostname: postgres-server
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
@@ -23,8 +25,6 @@ services:
       PGADMIN_DEFAULT_PASSWORD: admin
     volumes:
       - pgadmin-data:/var/lib/pgadmin
-      - /home/jose/Proyectos/autolbackend/:/sql
-
 
 volumes:
   pg-data:
