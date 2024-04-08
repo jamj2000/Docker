@@ -4,7 +4,8 @@ services:
   db:
     image: mariadb:10.3
     restart: always
-    container_name: mariadb
+    container_name: maria-server 
+    hostname: maria-server
     environment:
 #      MYSQL_ROOT_PASSWORD: root
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
