@@ -31,7 +31,10 @@ volumes:
   data:
 
 
-# https://www.mongodb.com/docs/manual/reference/connection-string-options/#authentication-options
-#
+# CONEXIÓN LOCAL:
+# info: https://www.mongodb.com/docs/manual/reference/connection-string-options/#authentication-options
 # docker exec -it mongodb mongosh "mongodb://user:pass@127.0.0.1:27017/payload?authSource=admin"
 
+
+# MONGODB ATLAS:
+# docker exec -it mongodb mongosh "mongodb+srv://jose:password@cluster0.hhmhj.mongodb.net/payload?retryWrites=true&w=majority&appName=Cluster0"
